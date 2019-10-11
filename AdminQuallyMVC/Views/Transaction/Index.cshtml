@@ -1,0 +1,51 @@
+﻿@using AdminQuallyMVC.ViewModels.Transactions
+@addTagHelper "*, AdminQuallyMVC"
+@model TransactionViewModel
+@{
+    ViewData["Title"] = "Управление транзакциями";
+}
+
+<h3 class="text-center">Управление транзакциями</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="Transaction" asp-action="Add" role="button" class="btn btn-secondary" style="margin:5px">Добавить транзакцию</a>
+    <form asp-controller="Transaction" asp-action="Clear" method="post" style="margin:5px">
+        <input type="submit" value="Очистить таблицу" class="btn btn-secondary" />
+    </form>
+</div>
+
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label" style="margin:10px">PCID: </label>
+        @Html.TextBox("pcid", Model.FilterViewModel.SelectedId, htmlAttributes: new { @class = "form-control" })
+        <input style="margin:10px" type="submit" value="Фильтр" class="btn btn-secondary" />
+    </div>
+</form>
+
+<table class="table table-sm">
+    <thead>
+        <tr class="table-light">
+            <th scope="col" class="text-center">ID ПК</th>
+            <th scope="col" class="text-center">ID перевода</th>
+            <th scope="col" class="text-center">Дата</th>
+            <th scope="col" class="text-center">Сумма</th>
+            <th scope="col" class="text-center">Система</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model.Transactions)
+        {
+        <tr class="table-light">
+            <td class="text-center">@transaction.UserId</td>
+            <td class="text-center">@transaction.Operation_Id</td>
+            <td class="text-center">@transaction.Date.ToString("dd.MM.yyyy")</td>
+            <td class="text-center">@transaction.Sum</td>
+            <td class="text-center">@transaction.Type</td>
+            <td>
+                <a asp-controller="Transaction" asp-action="Details" asp-route-id="@transaction.Id" class="btn-sm btn btn-secondary">Подробнее</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="@Model.PageViewModel" page-action="Index" class="d-flex justify-content-center"></page-link>
+

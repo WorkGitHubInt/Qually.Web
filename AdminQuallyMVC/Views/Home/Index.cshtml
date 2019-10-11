@@ -1,0 +1,50 @@
+﻿@model AdminQuallyMVC.Models.HomeModel
+@{
+    ViewData["Title"] = "Главная";
+}
+
+    <div class="jumbotron" style="margin-top:20px">
+        <h3 class="text-center" style="margin-bottom:20px">Добро пожаловать @Model.Admin</h3>
+        <h4>Показатели</h4>
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th scope="col">Пользователи</th>
+                    <th scope="col">Активные</th>
+                    <th scope="col">Бесконечные</th>
+                    <th scope="col">Пробные</th>
+                    <th scope="col">Заказы</th>
+                    <th scope="col">Транзакции</th>
+                    <th scope="col">Ключи</th>
+                    <th scope="col">Сообщения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Users</td>
+                    <td>@Model.ActiveUsers</td>
+                    <td>@Model.UnlimitedUsers</td>
+                    <td>@Model.TrialUsers</td>
+                    <td>@Model.Orders</td>
+                    <td>@Model.Transactions</td>
+                    <td>@Model.Keys</td>
+                    <td>@Model.Messages</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="d-flex justify-content-start table">
+            @foreach (var program in Model.Programs)
+            {
+                <tr>
+                    <td>@program.Name</td>
+                    <td>@program.Id</td>
+                    <td>@program.Version</td>
+                    <td>@program.LaunchCount</td>
+                </tr>
+            }
+        </table>
+        <p>Доход: @Model.Income</p>
+        <div style="width:150px">
+            <a style="margin-bottom: 5px" class="btn btn-secondary btn-block" asp-controller="Buy" asp-action="Index">Тестовая покупка</a>
+        </div>
+    </div>

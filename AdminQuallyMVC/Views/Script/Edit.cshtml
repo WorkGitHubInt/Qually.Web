@@ -1,0 +1,31 @@
+﻿@using QuallyLib;
+@model Script
+@{
+    ViewData["Title"] = "Редактирование скрипта";
+}
+
+<h3 class="text-center">Редактировать скрипт</h3>
+<div>
+    <form asp-controller="Script" asp-action="Edit" method="post">
+        <div>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Title">Название</label>
+                <input type="text" asp-for="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Content">Код</label>
+                <textarea asp-for="Content" class="form-control" rows="20"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url">Ссылка</label>
+                <input type="text" asp-for="Url" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Version">Версия</label>
+                <input type="text" asp-for="Version" class="form-control" />
+            </div>
+            <input type="submit" value="Подтвердить" class="btn btn-secondary" />
+        </div>
+    </form>
+</div>

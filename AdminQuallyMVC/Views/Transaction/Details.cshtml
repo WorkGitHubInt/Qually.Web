@@ -1,0 +1,40 @@
+﻿@model QuallyLib.Transaction
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<div class="text-center">
+    <h3 class="text-center">Транзакция @Model.Id</h3>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>ID операции</dt>
+            <dd>@Model.Operation_Id</dd>
+
+            <dt>Дата</dt>
+            <dd>@Model.Date.ToString("dd.MM.yyyy")</dd>
+
+            <dt>Оплачиваемая сумма</dt>
+            <dd>@Model.Sum</dd>
+
+            <dt>ID ПК</dt>
+            <dd>@Model.UserId</dd>
+
+            <dt>Sender</dt>
+            <dd>@Model.Sender</dd>
+
+            <dt>Email</dt>
+            <dd>@Model.Email</dd>
+
+            <dt>Phone</dt>
+            <dd>@Model.Phone</dd>
+
+            <dt>Pay Type</dt>
+            <dd>@Model.Type</dd>
+        </dl>
+    </div>
+    <a asp-controller="Transaction" asp-action="Index" class="btn btn-secondary">Назад</a>
+    <a asp-controller="Transaction" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Изменить</a>
+    <form class="d-inline" asp-controller="Transaction" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-secondary">Удалить</button>
+    </form>
+</div>

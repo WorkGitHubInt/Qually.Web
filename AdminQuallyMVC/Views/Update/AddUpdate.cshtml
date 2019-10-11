@@ -1,0 +1,21 @@
+﻿@model QuallyLib.Update
+@{
+    ViewData["Title"] = "Добавить обновление";
+}
+
+<h3 class="text-center">Добавить обновление</h3>
+<form asp-controller="Update" asp-action="AddUpdate" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ProgramId">Программа</label>
+        <select class="form-control" asp-for="ProgramId" asp-items="ViewBag.ListPrograms"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Version">Версия</label>
+        <input asp-for="Version" class="form-control" type="text" />
+    </div>
+    <div class="form-group">
+        <label>Файлы</label>
+        <input name="zip" class="form-control-file" type="file" />
+    </div>
+    <input type="submit" value="Добавить" class="btn btn-secondary" />
+</form>

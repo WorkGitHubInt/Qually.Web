@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QuallyLib.SubModel>
+@{
+    ViewData["Title"] = "Управление подписками";
+}
+
+<h3 class="text-center">Подписки</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="Sub" asp-action="Add" class="btn btn-secondary" style="margin:5px">Добавить подписку</a>
+</div>
+
+<table class="table table-sm">
+    <thead>
+        <tr class="text-center table-light">
+            <th scope="col">ID</th>
+            <th scope="col">Длительность</th>
+            <th scope="col">Уровень</th>
+            <th scope="col">Стоимость</th>
+            <th scope="col">Название</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subModel in Model)
+        {
+            <tr class="text-center table-light">
+                <td>@subModel.Id</td>
+                <td>@subModel.Duration</td>
+                <td>@subModel.Lvl</td>
+                <td>@subModel.Sum</td>
+                <td>@subModel.Title</td>
+                <td>
+                    <a asp-controller="Sub" asp-action="Edit" asp-route-id="@subModel.Id" class="btn-sm btn btn-secondary">Изменить</a>
+                    <form asp-controller="Sub" asp-action="Delete" asp-route-id="@subModel.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

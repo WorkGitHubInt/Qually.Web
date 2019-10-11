@@ -1,0 +1,17 @@
+﻿@model QuallyLib.Program
+@{
+    ViewData["Title"] = "Добавить программу";
+}
+
+<h3 class="text-center">Добавить программу</h3>
+<form asp-controller="Update" asp-action="AddProgram" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Программа</label>
+        <input asp-for="Name" class="form-control" type="text" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Version">Версия</label>
+        <input asp-for="Version" class="form-control" type="text" />
+    </div>
+    <input type="submit" value="Добавить" class="btn btn-secondary" />
+</form>

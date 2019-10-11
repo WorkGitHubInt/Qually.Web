@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qually", "Qually\Qually.csproj", "{4CCA7A9D-4EF3-4E83-B8E1-EDE9B341EFDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuallyLib", "QuallyLib\QuallyLib.csproj", "{555C6FF0-B8F9-4551-8A21-7462A015DC25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminQuallyMVC", "AdminQuallyMVC\AdminQuallyMVC.csproj", "{B89E43AD-0580-4F7A-B234-26D0EF3959BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CCA7A9D-4EF3-4E83-B8E1-EDE9B341EFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCA7A9D-4EF3-4E83-B8E1-EDE9B341EFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCA7A9D-4EF3-4E83-B8E1-EDE9B341EFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCA7A9D-4EF3-4E83-B8E1-EDE9B341EFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555C6FF0-B8F9-4551-8A21-7462A015DC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555C6FF0-B8F9-4551-8A21-7462A015DC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555C6FF0-B8F9-4551-8A21-7462A015DC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555C6FF0-B8F9-4551-8A21-7462A015DC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89E43AD-0580-4F7A-B234-26D0EF3959BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89E43AD-0580-4F7A-B234-26D0EF3959BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89E43AD-0580-4F7A-B234-26D0EF3959BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89E43AD-0580-4F7A-B234-26D0EF3959BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32C13308-3685-4F24-A4F3-BB174E089273}
+	EndGlobalSection
+EndGlobal

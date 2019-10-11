@@ -1,0 +1,34 @@
+﻿@model IEnumerable<QuallyLib.Message>
+@{
+    ViewData["Title"] = "Сообщения";
+}
+
+<h3 class="text-center">Сообщения</h3>
+
+<table class="table table-light">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Пользователь</th>
+            <th scope="col">Программа</th>
+            <th scope="col">Тип</th>
+            <th scope="col">Версия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr class="text-center">
+                <td>@message.UserId</td>
+                <td>@message.Program.Name</td>
+                <td>@message.Type</td>
+                <td>@message.Version</td>
+                <td>
+                    <a asp-controller="Message" asp-action="Details" asp-route-id="@message.Id" class="btn btn-sm btn-secondary">Подробнее</a>
+                    <form class="d-inline" asp-controller="Message" asp-action="Delete" asp-route-id="@message.Id" method="post">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<QuallyLib.Article>
+@{
+    ViewData["Title"] = "Управление новостями";
+}
+
+<h3 class="text-center">Новости</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="Article" asp-action="Add" class="btn btn-secondary" style="margin:5px">Добавить новость</a>
+</div>
+
+<table class="table table-sm">
+    <thead>
+        <tr class="text-center table-light">
+            <th scope="col">Заголовок</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var article in Model)
+        {
+            <tr class="text-center table-light">
+                <th scope="row"></th>
+                <td>@article.Title</td>
+                <td>
+                    <a asp-controller="Article" asp-action="Edit" asp-route-id="@article.Id" class="btn-sm btn btn-secondary">Изменить</a>
+                    <form asp-controller="Article" asp-action="Delete" asp-route-id="@article.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

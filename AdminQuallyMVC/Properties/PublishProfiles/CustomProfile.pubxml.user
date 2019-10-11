@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADjYNMNFIWEGZX2zbl2XIWwAAAAACAAAAAAAQZgAAAAEAACAAAAASl16fueGCOYb4e9/JxENVJwMBIIEgmoWl8SA6UsSQmAAAAAAOgAAAAAIAACAAAAD5xIr4YiEn6xXshfiINxAl1vRac+2Er5G8zKhQHnAlSCAAAADkLWHr4iV+bZKJei3hCObEz1YvRs3bWb4Q2T4kLsMza0AAAAAqUFMHWauNh4PqnGH9JqkMGYS7hO0dbJs8OPY6JDrlEqZi9SJ4VFd0e2ohbvUY0KVT17YMUFe9Ud+6AtsGcBfh</EncryptedPassword>
+    <_PublishTargetUrl>ftp://31.31.196.199:21/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AdminQually.deps.json">
+      <publishTime>03/05/2019 23:45:26</publishTime>
+    </File>
+    <File Include="AdminQually.dll">
+      <publishTime>03/05/2019 23:45:02</publishTime>
+    </File>
+    <File Include="AdminQually.pdb">
+      <publishTime>03/05/2019 23:45:02</publishTime>
+    </File>
+    <File Include="AdminQually.runtimeconfig.json">
+      <publishTime>03/05/2019 23:45:26</publishTime>
+    </File>
+    <File Include="AdminQually.Views.dll">
+      <publishTime>03/05/2019 23:45:05</publishTime>
+    </File>
+    <File Include="AdminQually.Views.pdb">
+      <publishTime>03/05/2019 23:45:05</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.deps.json">
+      <publishTime>05/13/2019 22:33:45</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.dll">
+      <publishTime>05/13/2019 22:33:43</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.pdb">
+      <publishTime>05/13/2019 22:33:43</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.runtimeconfig.json">
+      <publishTime>05/13/2019 22:33:45</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.Views.dll">
+      <publishTime>05/13/2019 22:33:44</publishTime>
+    </File>
+    <File Include="AdminQuallyMVC.Views.pdb">
+      <publishTime>05/13/2019 22:33:44</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/13/2019 17:44:31</publishTime>
+    </File>
+    <File Include="appsettings.production.json">
+      <publishTime>05/13/2019 22:33:45</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>03/02/2019 19:52:30</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>03/19/2019 23:29:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>03/19/2019 23:29:21</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>01/24/2019 23:30:00</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>01/24/2019 23:30:06</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>03/02/2019 19:51:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>03/02/2019 19:52:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>03/02/2019 19:52:04</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>03/02/2019 19:52:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>03/02/2019 19:51:58</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>03/02/2019 19:51:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>03/02/2019 19:52:04</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>03/19/2019 23:29:03</publishTime>
+    </File>
+    <File Include="QuallyLib.dll">
+      <publishTime>05/13/2019 22:33:21</publishTime>
+    </File>
+    <File Include="QuallyLib.pdb">
+      <publishTime>05/13/2019 22:33:21</publishTime>
+    </File>
+    <File Include="Remotion.Linq.dll">
+      <publishTime>03/19/2019 23:31:14</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>03/19/2019 23:29:08</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>03/19/2019 23:29:08</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>03/19/2019 23:29:08</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>03/19/2019 23:29:08</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>03/19/2019 23:29:08</publishTime>
+    </File>
+    <File Include="System.Interactive.Async.dll">
+      <publishTime>03/19/2019 23:31:44</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/13/2019 22:33:45</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/Key.svg">
+      <publishTime>03/19/2019 00:09:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>03/09/2019 16:30:47</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
+      <publishTime>03/07/2019 01:25:47</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>03/07/2019 01:25:46</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>03/07/2019 01:25:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>03/06/2019 13:14:58</publishTime>
+    </File>
+    <File Include="wwwroot/log.txt">
+      <publishTime>03/03/2019 01:13:00</publishTime>
+    </File>
+    <File Include="wwwroot/money.svg">
+      <publishTime>03/16/2019 12:16:50</publishTime>
+    </File>
+    <File Include="wwwroot/script.svg">
+      <publishTime>03/19/2019 00:06:37</publishTime>
+    </File>
+    <File Include="wwwroot/transaction.svg">
+      <publishTime>03/19/2019 00:05:56</publishTime>
+    </File>
+    <File Include="wwwroot/update.svg">
+      <publishTime>03/19/2019 00:06:43</publishTime>
+    </File>
+    <File Include="wwwroot/versions.json">
+      <publishTime>03/09/2019 23:52:27</publishTime>
+    </File>
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=localhost%3b Database=u0660770_QuallyDB%3b Integrated Security=False%3bUser ID=u0660770_interception%3b Password=Z0l6ed3~</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

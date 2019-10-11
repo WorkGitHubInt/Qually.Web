@@ -1,0 +1,17 @@
+﻿@model AdminQuallyMVC.ViewModels.ConfirmModel
+@{
+    ViewData["Title"] = "Подтверждение";
+}
+
+<h4 class="text-center">Проверьте данные</h4>
+<div class="d-flex justify-content-center">
+    <form class="d-block" asp-controller="Buy" asp-action="Payment">
+        <input type="hidden" name="userId" value="@Model.UserId" />
+        <input type="hidden" name="subModelId" value="@Model.SubModelId" />
+        <p style="font-size:20px">Внимание у вас @Model.UserLvl уровень подписки остаток дней @Model.Days если вы сейчас хотите перейти на @Model.PayLvl уровень вам придется заплатить дополнительно @Model.DifSum.ToString("F") руб. Всего: @Model.TotalSum.ToString("F")</p>
+        <div class="form-group d-flex justify-content-center">
+            <a asp-action="Index" asp-controller="Home" class="btn btn-secondary" style="margin:5px">Отмена</a>
+            <input type="submit" class="btn btn-secondary" value="Подтвердить" style="margin:5px"/>
+        </div>
+    </form>
+</div>

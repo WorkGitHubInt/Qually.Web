@@ -1,0 +1,45 @@
+﻿@using QuallyLib;
+@model IEnumerable<QuallyLib.Key>
+@{
+    ViewData["Title"] = "Генерация ключей";
+}
+
+<h3 class="text-center">Генерация ключей</h3>
+
+<form method="post" asp-controller="Key" asp-action="Generate">
+    <label>ID:</label>
+    <input type="text" name="userId" style="margin-right:5px"/>
+    <label>Уровень:</label>
+    <select name="lvl" asp-items="Html.GetEnumSelectList<SubscriptionLvl>()" style="margin-right:5px"></select>
+    <label>Длительность:</label>
+    <input type="number" name="duration" />
+    <input type="submit" class="btn btn-secondary btn-sm" value="Сгенерировать" style="margin:3px" />
+</form>
+<table class="table table-light">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Ключ</th>
+            <th scope="col">ID ПК</th>
+            <th scope="col">Активирован</th>
+            <th scope="col">Уровень подписки</th>
+            <th scope="col">Длительность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var key in Model)
+        {
+            <tr class="text-center">
+                <td>@key.Code</td>
+                <td>@key.UserId</td>
+                <td>@key.Activated</td>
+                <td>@key.Lvl</td>
+                <td>@key.Duration</td>
+                <td>
+                    <form class="d-inline" asp-controller="Key" asp-action="Delete" asp-route-id="@key.Id" method="post">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

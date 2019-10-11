@@ -1,0 +1,43 @@
+﻿@model QuallyLib.User
+@{
+    ViewData["Title"] = Model.Id;
+}
+
+<div class="text-center">
+    <h3 class="text-center">Пользователь @Model.Id</h3>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>ID ПК</dt>
+            <dd>@Model.PCID</dd>
+
+            <dt>USB ID</dt>
+            <dd>@Model.USBId</dd>
+
+            <dt>Уровень подписки</dt>
+            <dd>@Model.Lvl</dd>
+
+            <dt>Дата подписки</dt>
+            <dd>@Model.SubscriptionDate.ToString("dd.MM.yyyy")</dd>
+
+            <dt>Дата окончания</dt>
+            <dd>@Model.SubscriptionExpDate.ToString("dd.MM.yyyy")</dd>
+
+            <dt>Активный</dt>
+            <dd>@Model.Active</dd>
+
+            <dt>Пробный подписчик</dt>
+            <dd>@Model.Trial</dd>
+
+            <dt>Пробная использована</dt>
+            <dd>@Model.TrialUse</dd>
+
+            <dt>Бесконечный подписчик</dt>
+            <dd>@Model.UnlimitedSub</dd>
+        </dl>
+    </div>
+    <a asp-controller="User" asp-action="Index" class="btn btn-secondary">Назад</a>
+    <a asp-controller="User" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Изменить</a>
+    <form class="d-inline" asp-controller="User" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-secondary">Удалить</button>
+    </form>
+</div>

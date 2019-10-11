@@ -1,0 +1,58 @@
+﻿@using AdminQuallyMVC.ViewModels.Orders;
+@addTagHelper "*, AdminQuallyMVC"
+@model OrderViewModel
+@{
+    ViewData["Title"] = "Управление заказами";
+}
+
+<h3 class="text-center">Заказы</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="Order" asp-action="Add" class="btn btn-secondary" style="margin:5px">Добавить заказ</a>
+    <form asp-controller="Order" asp-action="Clear" method="post">
+        <input type="submit" value="Очистить таблицу" class="btn btn-secondary" style="margin:5px" />
+    </form>
+</div>
+
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label" style="margin:10px">PCID: </label>
+        @Html.TextBox("pcid", Model.FilterViewModel.SelectedId, htmlAttributes: new { @class = "form-control" })
+        <input style="margin:10px" type="submit" value="Фильтр" class="btn btn-secondary" />
+    </div>
+</form>
+
+<table class="table table-sm">
+    <thead>
+        <tr class="text-center table-light">
+            <th scope="col">ID ПК</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Длительность</th>
+            <th scope="col">Уровень</th>
+            <th scope="col">Сумма</th>
+            <th scope="col">Оплачен</th>
+            <th scope="col">Тип</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+        <tr class="text-center table-light">
+            <td>@order.UserId</td>
+            <td>@order.Date.ToString("dd.MM.yyyy")</td>
+            <td>@order.Duration</td>
+            <td>@order.Lvl</td>
+            <td>@order.Sum</td>
+            <td>@order.Paid</td>
+            <td>@order.Type</td>
+            <td>
+                <a asp-controller="Order" asp-action="Edit" asp-route-id="@order.Id" class="btn-sm btn btn-secondary">Изменить</a>
+                <form asp-controller="Order" asp-action="Delete" asp-route-id="@order.Id" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="@Model.PageViewModel" page-action="Index" class="d-flex justify-content-center"></page-link>
+

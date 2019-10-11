@@ -1,0 +1,70 @@
+﻿@using System;
+@using AdminQuallyMVC.ViewModels.Users;
+@addTagHelper "*, AdminQuallyMVC"
+@model UserViewModel
+@{
+    ViewData["Title"] = "Управление пользователями";
+}
+
+<h3 class="text-center">Пользователи</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="User" asp-action="Add" class="btn btn-secondary" style="margin:5px">Добавить пользователя</a>
+    <form asp-controller="User" asp-action="Clear" method="post">
+        <input type="submit" value="Очистить таблицу" class="btn btn-secondary" style="margin:5px" />
+    </form>
+</div>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label" style="margin:10px">PCID: </label>
+        @Html.TextBox("pcid", Model.FilterViewModel.SelectedId, htmlAttributes: new { @class = "form-control" })
+        <label class="control-label" style="margin:10px">Уровень: </label>
+        @Html.DropDownList("lvl", Model.FilterViewModel.Lvls as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+        <input style="margin:10px" type="submit" value="Фильтр" class="btn btn-secondary" />
+    </div>
+</form>
+
+<table class="table table-sm">
+    <thead>
+        <tr class="text-center table-light">
+            <th scope="col">ID ПК</th>
+            <th scope="col">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@Model.SortViewModel.LvlSort"
+                   asp-route-pcid="@Model.FilterViewModel.SelectedId"
+                   asp-route-lvl="@Model.FilterViewModel.SelectedLvl">Уровень подписки</a>
+            </th>
+            <th scope="col">Дата окончания подписки</th>
+            <th scope="col">А</th>
+            <th scope="col">П</th>
+            <th scope="col">Б</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr class="text-center table-light">
+                <td>@user.PCID</td>
+                <td>@user.Lvl</td>
+                <td>@user.SubscriptionExpDate.ToString("dd.MM.yyyy")</td>
+                <td>@user.Active</td>
+                <td>@user.Trial</td>
+                <td>@user.UnlimitedSub</td>
+                <td>
+                    <a asp-controller="User" asp-action="Details" asp-route-id="@user.Id" class="btn btn-sm btn-secondary">Подробнее</a>
+                    <form class="d-inline" asp-controller="User" asp-action="Activate" asp-route-id="@user.Id" method="post">
+                        @if (user.Active)
+                        {
+                            <button type="submit" class="btn btn-secondary btn-sm">Деактивировать</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-secondary btn-sm">Активировать</button>
+                        }
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="@Model.PageViewModel" page-action="Index" class="d-flex justify-content-center"></page-link>

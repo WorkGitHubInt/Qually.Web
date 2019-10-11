@@ -1,0 +1,46 @@
+﻿@using QuallyLib;
+@model QuallyLib.Order
+@{
+    ViewData["Title"] = "Редактирование заказа";
+}
+
+<h3 class="text-center">Редактировать заказ @Model.Id</h3>
+<div>
+    <form asp-controller="Order" asp-action="Edit" method="post">
+        <div>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="UserId">ID Пользователя</label><br />
+                <input type="text" asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date">Дата</label>
+                <input type="date" asp-for="Date" class="form-control"/> 
+            </div>
+            <div class="form-group">
+                <label asp-for="Duration">Длительность подписки</label>
+                <input type="text" asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lvl" class="control-label">Уровень подписки</label>
+                <select multiple class="form-control" asp-for="Lvl" asp-items="Html.GetEnumSelectList<SubscriptionLvl>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sum">Оплачиваемая сумма</label>
+                <input type="text" asp-for="Sum" class="form-control" />
+                <span asp-validation-for="Sum"></span>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="Paid" class="form-check-input" style="margin-left:0.01rem" />
+                <label asp-for="Paid" class="form-check-label" style="margin-left:1.25rem">Оплачен</label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Описание</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+            <input type="submit" value="Подтвердить" class="btn btn-secondary" />
+        </div>
+    </form>
+</div>

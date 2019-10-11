@@ -1,0 +1,45 @@
+﻿@model QuallyLib.Transaction
+@{
+    ViewData["Title"] = "Изменение транзакции";
+}
+
+<h3 class="text-center">Изменить транзакцию @Model.Id</h3>
+<div class="d-flex justify-content-center text-center">
+    <form asp-controller="Transaction" asp-action="Edit" method="post">
+        <div class="form-group">
+            <label asp-for="Operation_Id" class="control-label">ID Операции</label>
+            <input type="text" asp-for="Operation_Id" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Date" class="control-label">Дата</label>
+            <input type="date" asp-for="Date" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Sum" class="control-label">Сумма</label>
+            <input type="text" asp-for="Sum" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserId" class="control-label">ID Пользователя</label>
+            <input type="text" asp-for="UserId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Sender" class="control-label">Отправитель</label>
+            <input type="text" asp-for="Sender" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input type="text" asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="control-label">Телефон</label>
+            <input type="text" asp-for="Phone" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Type" class="control-label">Система</label>
+            <input type="text" asp-for="Type" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Изменить" class="btn btn-secondary" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿@model AdminQuallyMVC.ViewModels.SubViewModel;
+@{
+    ViewData["Title"] = "Тестовая покупка";
+}
+
+<h4 class="text-center">Проверьте данные</h4>
+<div class="d-flex justify-content-center">
+    <form class="d-block" asp-controller="Buy" asp-action="Confirm">
+        <table class="table">
+            <tr>
+                <td>
+                    <label for="userId">ID пользователя</label>
+                </td>
+                <td>
+                    <input type="text" name="userId" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="subModelId">Тип подписки</label>
+                </td>
+                <td>
+                    <select name="subModelId" asp-items="Model.Models"></select>
+                </td>
+            </tr>
+        </table>
+        <div class="form-group d-flex justify-content-center">
+            <input type="submit" class="btn btn-secondary" value="Подтвердить" />
+        </div>
+    </form>
+</div>
+

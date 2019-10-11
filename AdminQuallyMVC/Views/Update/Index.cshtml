@@ -1,0 +1,57 @@
+﻿@model AdminQuallyMVC.Models.UpdateModel
+@{
+    ViewData["Title"] = "Управление обновлениями";
+}
+
+<h3 class="text-center">Управление обновлениями</h3>
+<div class="d-flex justify-content-center">
+    <a asp-controller="Update" asp-action="AddProgram" class="btn btn-secondary">Добавить программу</a>
+</div>
+<table class="d-flex justify-content-center table">
+    @foreach (var program in Model.Programs)
+    {
+        <tr>
+            <td>@program.Name</td>
+            <td>@program.Version</td>
+            <td>
+                <form method="post" asp-controller="Update" asp-action="ChangeVersion" class="d-inline">
+                    <input type="hidden" name="id" value="@program.Id" />
+                    <input type="text" name="version" />
+                    <input type="submit" class="btn btn-secondary" value="Изменить" />
+                </form>
+                <form method="post" asp-controller="Update" asp-action="DeleteProgram" asp-route-id="@program.Id" class="d-inline">
+                    <input type="submit" class="btn btn-secondary" value="Удалить" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-controller="Update" asp-action="AddUpdate" class="btn btn-secondary" style="margin-bottom:10px">Добавить обновление</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Программа</th>
+            <th scope="col">Версия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var update in Model.Updates)
+        {
+            <tr>
+                <td>@update.Id</td>
+                <td>@update.Program.Name</td>
+                <td>@update.Version</td>
+                <td>
+                    <form asp-controller="Update" asp-action="Download" asp-route-id="@update.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-secondary btn-sm">Скачать</button>
+                    </form>
+                    <form asp-controller="Update" asp-action="Delete" asp-route-id="@update.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

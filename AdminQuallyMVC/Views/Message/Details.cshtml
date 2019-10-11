@@ -1,0 +1,50 @@
+﻿@model QuallyLib.Message
+@{
+    ViewData["Title"] = Model.Id;
+}
+
+<div class="text-center">
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Пользователь</dt>
+            <dd>@Model.UserId</dd>
+
+            <dt>Программа</dt>
+            <dd>@Model.Program.Name</dd>
+
+            <dt>Версия</dt>
+            <dd>@Model.Version</dd>
+
+            <dt>Тип</dt>
+            <dd>@Model.Type</dd>
+
+            <dt>Сообщение</dt>
+            <dd>@Model.Body</dd>
+
+            <dt>Контакты</dt>
+            <dd>@Model.Contacts</dd>
+
+            <dt>Логи Main</dt>
+            <dd>
+                <textarea style="width:650px; height:300px;">@Model.LogMain</textarea>
+            </dd>
+
+            <dt>Логи Acc</dt>
+            <dd>
+                <textarea style="width:650px; height:300px;">@Model.LogAcc</textarea>
+            </dd>
+
+            <dt>Логи Error</dt>
+            <dd>
+                <textarea style="width:650px; height:300px;">@Model.LogError</textarea>
+            </dd>
+        </dl>
+    </div>
+    <p>Статус</p>
+    <form asp-controller="Message" asp-action="Edit" method="post">
+        <input asp-for="Id" type="hidden" />
+        <input type="text" asp-for="Status" class="form-control" />
+        <input type="submit" value="Изменить" class="btn btn-secondary" />
+    </form>
+    <a asp-controller="Message" asp-action="Index" class="btn btn-secondary">Назад</a>
+</div>

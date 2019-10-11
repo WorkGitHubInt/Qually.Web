@@ -1,0 +1,33 @@
+﻿@model QuallyLib.Review
+@{
+    ViewData["Title"] = Model.UserID;
+}
+<div class="text-center">
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Пользователь</dt>
+            <dd>@Model.UserID</dd>
+
+            <dt>Имя</dt>
+            <dd>@Model.Name</dd>
+
+            <dt>Дата</dt>
+            <dd>@Model.Date</dd>
+
+            <dt>Сообщение</dt>
+            <dd>@Model.Message</dd>
+
+            <dt>Одобрено</dt>
+            <dd>@Model.Approved</dd>
+        </dl>
+    </div>
+    <a asp-controller="Review" asp-action="Index" class="btn btn-secondary">Назад</a>
+    <form class="d-inline" asp-controller="Review" asp-action="Delete" method="post">
+        <input asp-for="Id" type="hidden" />
+        <input type="submit" value="Удалить" class="btn btn-secondary" />
+    </form>
+    <form class="d-inline" asp-controller="Review" asp-action="Approve" method="post">
+        <input asp-for="Id" type="hidden" />
+        <input type="submit" value="Одобрить" class="btn btn-secondary" />
+    </form>
+</div>

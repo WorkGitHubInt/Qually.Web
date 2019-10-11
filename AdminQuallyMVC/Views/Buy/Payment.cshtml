@@ -1,0 +1,10 @@
+﻿@model AdminQuallyMVC.ViewModels.BuyModel
+@{
+    ViewData["Title"] = "Оплата";
+}
+
+<h3 class="text-center">Оплата "@Model.Order.Description" для @Model.Order.UserId</h3>
+
+<div class="d-flex justify-content-center">
+    <script type="text/javascript" src="https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?MerchantLogin=qually&OutSum=@Model.Order.Sum&InvoiceID=0&Description=@Model.Order.Description&SignatureValue=@Model.SingnatureValue&IsTest=1&shp_order=@Model.Order.Id&shp_userid=@Model.Order.UserId"></script>
+</div>

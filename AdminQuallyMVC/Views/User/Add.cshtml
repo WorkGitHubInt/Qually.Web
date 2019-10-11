@@ -1,0 +1,72 @@
+﻿@model QuallyLib.User
+@{
+    ViewData["Title"] = "Добавление пользователя";
+}
+@using QuallyLib;
+
+<h3 class="text-center">Добавить пользователя</h3>
+<div>
+    <form asp-action="Add" asp-controller="User">
+        <div>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="PCID">ID ПК</label>
+                <input type="text" asp-for="PCID" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="USBId">USB ID</label>
+                <input type="text" asp-for="USBId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Lvl">Уровень подписки</label><br />
+                <select multiple class="form-control" asp-for="Lvl" asp-items="Html.GetEnumSelectList<SubscriptionLvl>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubscriptionDate">Дата подписки</label>
+                <input type="date" asp-for="SubscriptionDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SubscriptionExpDate" class="control-label">Дата окончания подписки</label>
+                <input type="date" asp-for="SubscriptionExpDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="Active" class="form-check-input" style="margin-left:0.01rem" />
+                <label asp-for="Active" class="form-check-label" style="margin-left:1.25rem">Активный</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="Trial" class="form-check-input" style="margin-left:0.01rem" />
+                <label asp-for="Trial" class="form-check-label" style="margin-left:1.25rem">Пробный</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="TrialUse" class="form-check-input" style="margin-left:0.01rem" />
+                <label asp-for="TrialUse" class="form-check-label" style="margin-left:1.25rem">Пробная использована</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="UnlimitedSub" class="form-check-input" style="margin-left:0.01rem" />
+                <label asp-for="UnlimitedSub" class="form-check-label" style="margin-left:1.25rem">Бесконечная подписка</label>
+            </div>
+            <input type="submit" value="Добавить" class="btn btn-secondary" />
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <environment include="Development">
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"
+                asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator"
+                crossorigin="anonymous"
+                integrity="sha256-F6h55Qw6sweK+t7SiOJX+2bpSAa3b/fnlrVCJvmEj1A=">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"
+                asp-fallback-src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive"
+                crossorigin="anonymous"
+                integrity="sha256-9GycpJnliUjJDVDqP0UEu/bsm9U+3dnQUH8+3W10vkY=">
+        </script>
+    </environment>
+}

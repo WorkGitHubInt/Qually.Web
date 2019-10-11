@@ -1,0 +1,32 @@
+﻿@model IEnumerable<QuallyLib.Counter>
+@using System.Globalization
+@{
+    ViewData["Title"] = "";
+}
+
+<table class="table table-light">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Пользователь</th>
+            <th scope="col">Программа</th>
+            <th scope="col">IP</th>
+            <th scope="col">Дата</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var count in Model)
+        {
+            <tr class="text-center">
+                <td>@count.UserId</td>
+                <td>@count.Program.Name</td>
+                <td>@count.IP</td>
+                <td>@count.Date.ToString("dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture)</td>
+                <td>
+                    <form class="d-inline" asp-controller="Counter" asp-action="Delete" asp-route-id="@count.Id" method="post">
+                        <button type="submit" class="btn btn-secondary btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
