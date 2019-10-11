@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Подписка";
+}
+
+    <div data-aos="zoom-in" class="text-center">
+        <h3 style="margin-bottom:30px">Подписки</h3>
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">1 уровень</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">
+                        100₽
+                        <small class="text-muted">/ мес.</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Bot Qually</li>
+                        <li>Account Holder</li>
+                        <li>Скрипты</li>
+                    </ul>
+                    <div class="btn-group" role="group" style="margin-top:72px">
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="1" class="btn btn-primary">1 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="2" class="btn btn-primary">3 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="3" class="btn btn-primary">6 мес.</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">2 уровень</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">
+                        250₽
+                        <small class="text-muted">/ мес.</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Bot Qually</li>
+                        <li>Qually Flash</li>
+                        <li>Account Holder</li>
+                        <li>Скрипты</li>
+                    </ul>
+                    <div class="btn-group" role="group" style="margin-top:48px">
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="4" class="btn btn-primary">1 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="5" class="btn btn-primary">3 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="6" class="btn btn-primary">6 мес.</a>
+                    </div>
+                </div>
+            </div>
+            @*<div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">3 уровень</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">
+                        400₽
+                        <small class="text-muted">/ мес.</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Bot Qually</li>
+                        <li>Qually Flash</li>
+                        <li>Account Holder</li>
+                        <li>Sell Manager</li>
+                        <li>Center Manager</li>
+                        <li>Скрипты</li>
+                    </ul>
+                    <div class="btn-group" role="group">
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="7" class="btn btn-primary">1 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="8" class="btn btn-primary">3 мес.</a>
+                        <a asp-controller="Subscribe" asp-action="Confirm" asp-route-id="9" class="btn btn-primary">6 мес.</a>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+        @*<table class="table table-light">
+            <thead>
+                <tr>
+                    <th scope="col">Подписки</th>
+                    <th scope="col">Уровень 1</th>
+                    <th scope="col">Уровень 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 месяц</td>
+                    <td>150 руб.</td>
+                    <td>250 руб.</td>
+                </tr>
+                <tr>
+                    <td>3 месяца</td>
+                    <td>300 руб.</td>
+                    <td>500 руб.</td>
+                </tr>
+                <tr>
+                    <td>6 месяцев</td>
+                    <td>600 руб.</td>
+                    <td>1100 руб.</td>
+                </tr>
+            </tbody>
+        </table>*@
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th scope="col">Программы</th>
+                    <th scope="col">Уровень 1</th>
+                    <th scope="col">Уровень 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a asp-controller="Programs" asp-action="BotQually" style="text-decoration-style:none">Bot Qually</a></td>
+                    <td style="color:lawngreen">✔</td>
+                    <td style="color:lawngreen">✔</td>
+                </tr>
+                <tr>
+                    <td><a asp-controller="Programs" asp-action="QuallyFlash" style="text-decoration-style:none">Qually Flash</a></td>
+                    <td style="color:red">✘</td>
+                    <td style="color:lawngreen">✔</td>
+                </tr>
+                <tr>
+                    <td><a asp-controller="Programs" asp-action="AccountHolder" style="text-decoration-style:none">Account Holder</a></td>
+                    <td style="color:lawngreen">✔</td>
+                    <td style="color:lawngreen">✔</td>
+                </tr>
+                <tr>
+                    <td><a asp-controller="Programs" asp-action="Scripts" style="text-decoration-style:none">Скрипты</a></td>
+                    <td style="color:lawngreen">✔</td>
+                    <td style="color:lawngreen">✔</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="text-left">
+            <li>Приобретая подписку на 3 месяца, получаете 1 месяц бесплатно!</li>
+            <li>Приобретая подписку на 6 месяцев, получаете 2 месяца бесплатно!</li>
+        </ul>
+    </div>

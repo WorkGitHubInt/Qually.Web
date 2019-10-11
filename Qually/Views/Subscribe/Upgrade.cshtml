@@ -1,0 +1,49 @@
+﻿@model Qually.Models.ConfirmModel;
+@{
+    ViewData["Title"] = "Повышение уровня";
+}
+
+<div class="d-flex justify-content-center text-center">
+    <form asp-controller="Subscribe" asp-action="Warning" id="confirmForm" method="post">
+        <div class="form-group">
+            <label for="userId">ID пользователя</label><br />
+            <input class="form-control" type="text" value="@Model.UserId" name="userId" />
+        </div>
+        <div class="form-group">
+            <label for="subModelId">Тип подписки</label><br />
+            <select style="height:210px" multiple class="form-control" name="subModelId" for="subModelId" asp-items="Model.SubModelList"></select>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="type" value="1" />
+            <input type="submit" class="btn btn-primary warningBtn" value="Повысить" />
+        </div>
+    </form>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $.ajaxSetup({ cache: false });
+        $('#confirmForm').submit(function (e) {
+            e.preventDefault();
+            var $form = $(this);
+            $.post({
+                url: '/Subscribe/Warning',
+                data: $form.serialize(),
+                success: function (data, txtStatus) {
+                    if (data.redirect) {
+                        window.location.href = data.url;
+                    } else {
+                        $('.modal-content').html(data);
+                        $('#modDialog').modal('show');
+                    }
+                }
+            });
+        });
+        $('#cancelBtn').click(function () {
+            $('#modDialog').modal('hide');
+        });
+
+    })
+    </script>
+}

@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Программы";
+}
+<table data-aos="zoom-in" class="table">
+    <tr>
+        <td class="text-center">
+            <h5>Bot Qually</h5>
+            <img src="~/img/BotQually.jpg" class="d-block img-thumbnail img-fluid" />
+            <a asp-controller="Programs" asp-action="BotQually" class="btn btn-primary" style="margin-top: 10px;">Подробнее</a>
+            <a asp-controller="Programs" asp-action="BQGuide" class="btn btn-primary" style="margin-top: 10px;">Инструкция</a>
+        </td>
+        <td class="text-center">
+            <h5>Qually Flash</h5>
+            <img src="~/img/QuallyFlash.jpg" class="d-block img-thumbnail img-fluid" />
+            <a asp-controller="Programs" asp-action="QuallyFlash" class="btn btn-primary" style="margin-top: 10px;">Подробнее</a>
+            <a asp-controller="Programs" asp-action="QFGuide" class="btn btn-primary" style="margin-top: 10px;">Инструкция</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-center">
+            <h5>Account Holder</h5>
+            <img src="~/img/Acchold.jpg" class="d-block img-thumbnail img-fluid" />
+            <a asp-controller="Programs" asp-action="AccountHolder" class="btn btn-primary" style="margin-top: 10px;">Подробнее</a>
+            <a asp-controller="Programs" asp-action="AHGuide" class="btn btn-primary" style="margin-top: 10px;">Инструкция</a>
+        </td>
+        <td class="text-center">
+            <h5>Скрипты</h5>
+            <img src="~/img/Scripts.jpg" class="d-block img-thumbnail img-fluid" />
+            <a asp-controller="Programs" asp-action="Scripts" class="btn btn-primary" style="margin-top: 10px;">Подробнее</a>
+            @*<a asp-controller="Programs" asp-action="ScriptsGuide" class="btn btn-primary" style="margin-top: 10px;">Инструкция</a>*@
+        </td>
+    </tr>
+</table>

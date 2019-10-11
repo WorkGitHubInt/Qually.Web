@@ -1,0 +1,17 @@
+﻿@model Qually.Models.WarningModel
+
+<div class="modal-header">
+    <h4 class="text-center">Предупреждение</h4>
+    <button class="close" data-dismiss="modal" area-hidden="true">X</button>
+</div>
+<div class="modal-body">
+    <p style="font-size:20px">У вас @((int)Model.UserLvl) уровень подписки. Остаток дней: "@Model.Days". Для перехода на @((int)Model.PayLvl) уровень вам придется заплатить дополнительно @Model.DiffSum.ToString("F") руб. Всего: @Model.TotalSum.ToString("F") руб. Если вы хотите просто повысить уровень с текущим остатком дней перейдите по <a asp-controller="Subscribe" asp-action="Upgrade" asp-route-userId="@Model.UserId">ссылке</a></p>
+</div>
+<div class="modal-footer">
+    <a style="color:white" id="cancelBtn" class="btn btn-primary">Отмена</a>
+    <form asp-controller="Subscribe" asp-action="Payment" method="get">
+        <input type="hidden" name="userId" value="@Model.UserId" />
+        <input type="hidden" name="subModelId" value="@Model.SubModel.Id" />
+        <input type="submit" class="btn btn-primary" value="Продолжить" />
+    </form>
+</div>

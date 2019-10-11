@@ -1,0 +1,78 @@
+﻿@model Qually.Models.PaymentModel
+@{
+    ViewData["Title"] = "Оплата";
+}
+
+<div class="d-flex justify-content-center">
+    <table class="table border border-primary rounded d-flex justify-content-center">
+        <tr class="text-center">
+            <td><h5>@Model.SubModel.Title</h5></td>
+        </tr>
+        <tr class="text-center">
+            <td><h5>Пользователь: @Model.Order.UserId</h5></td>
+        </tr>
+        <tr class="text-center">
+            <td><h5>Сумма к оплате: @Model.Order.Sum руб.</h5></td>
+        </tr>
+        <tr class="d-flex justify-content-center">
+            <td>
+                <form method="post">
+                    <input class="form-control" name="orderid" type="hidden" value="@Model.Order.Id" />
+                    <h5 class="text-center">Способ оплаты</h5>
+                    <table class="table-borderless">
+                        <tr>
+                            <td>
+                                <input class="form-check-input" type="radio" name="type" value="qiwi" />
+                            </td>
+                            <td>
+                                <label class="form-check-label">
+                                    Qiwi
+                                </label>
+                            </td>
+                            <td>
+                                <img src="~/icons/qiwiicons.svg" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-check-input" type="radio" name="type" value="yandex" />
+                            </td>
+                            <td>
+                                <label class="form-check-label">
+                                    Yandex
+                                </label>
+                            </td>
+                            <td>
+                                <img style="height:12px;" src="~/icons/yandexicons.png" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-check-input" type="radio" name="type" value="robo" />
+                            </td>
+                            <td>
+                                <label class="form-check-label">
+                                    Robokassa
+                                </label>
+                            </td>
+                            <td>
+                                <img height="12" src="~/icons/robokassaicon.svg" />
+                            </td>
+                        </tr>
+                    </table>
+                    @*<div class="form-group">
+                        <h6 class="text-center">Email</h6>
+                        <input type="text" name="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <h6 class="text-center">Телефон</h6>
+                        <input type="text" name="phone" class="form-control" />
+                    </div>*@
+                    <div class="d-flex justify-content-center">
+                        <input type="submit" class="btn btn-primary" value="Оплатить" />
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
